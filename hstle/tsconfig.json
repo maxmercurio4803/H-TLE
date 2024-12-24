@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "lib": ["dom", "esnext"],
+      "allowJs": true,
+      "jsx": "react",
+      "strict": true
+    },
+    "include": [
+      "src/main.ts",
+      "src/App.svelte"
+    ]
+  }
+

@@ -1,8 +1,12 @@
-import { defineConfig } from 'vite'
-import deno from '@deno/vite-plugin'
+import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [deno(), svelte()],
-})
+  plugins: [svelte()],
+  build: {
+    outDir: 'dist',  // Output directory for the build
+    rollupOptions: {
+      input: 'index.html',  // Entry point for your app
+    },
+  },
+});
