@@ -32,13 +32,13 @@ jobs:
         run: "cd hstle && npm install"
 
       - name: Build step
-        run: "cd hstle && deno run build"
+        run: "cd hstle && npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "hstle-bands"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "hstle/src"
+          root: "dist"
           
           
