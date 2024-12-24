@@ -1,0 +1,19 @@
+{
+    "name": "hstle",
+    "version": "1.0.0",
+    "description": "You need to have Deno v2.0.0 or later installed to run this repo.",
+    "main": "svelte.config.js",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@sveltejs/vite-plugin-svelte": "^4.0.1",
+      "vite": "^5.4.11",
+      "vite-plugin-deno": "^0.0.0-alpha.0"
+    }
+  }
