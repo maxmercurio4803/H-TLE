@@ -32,7 +32,7 @@ jobs:
         run: "cd hstle && npm install"
 
       - name: Build step
-        run: "npm run build"
+        run: "cd hstle && npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
