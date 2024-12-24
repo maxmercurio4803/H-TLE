@@ -1,32 +1,40 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
 </script>
 
 <main>
-  <img src="/vite-deno.svg" alt="Vite with Deno" />
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+  <img src="/hstle_logo.PNG" alt="hstle logo" />
+  <h1>Knowing is not enough; we must apply. Wishing is not enough; we must do.</h1>
+  <h2> - Johann Wolfgang Von Goethe</h2>
 
-  <div class="card">
+  <!-- <div class="card">
     <Counter />
-  </div>
-
+  </div> -->
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
+  <h1> </h1>
   <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
+    Check out the <a href="https://hstle.store" target="_blank" rel="noreferrer">HSTLE store</a>.
   </p>
 </main>
+
 
 <style>
   .logo {
@@ -43,4 +51,10 @@
   .read-the-docs {
     color: #888;
   }
+  
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
 </style>
