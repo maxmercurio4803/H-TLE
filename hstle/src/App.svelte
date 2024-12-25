@@ -8,7 +8,7 @@
   <div class="card">
     <Quote/>
   </div>
-
+  
   <p>
     Check out the <a href="https://hstle.store" target="_blank" rel="noreferrer">HSTLE store</a>.
   </p>
