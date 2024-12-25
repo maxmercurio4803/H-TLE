@@ -4,32 +4,13 @@
 
 <main>
   <img src="/hstle_logo.PNG" alt="hstle logo" />
-  <h1>Knowing is not enough; we must apply. Wishing is not enough; we must do.</h1>
-  <h2> - Johann Wolfgang Von Goethe</h2>
+  <h2>Knowing is not enough; we must apply. Wishing is not enough; we must do.</h2>
+  <h3> - Johann Wolfgang Von Goethe</h3>
 
   <!-- <div class="card">
     <Counter />
   </div> -->
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
-  <h1> </h1>
+  <h1></h1>
   <p>
     Check out the <a href="https://hstle.store" target="_blank" rel="noreferrer">HSTLE store</a>.
   </p>
