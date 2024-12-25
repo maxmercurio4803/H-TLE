@@ -43,6 +43,7 @@ async function getTodaysQuote() {
 // Function to serve static files (HTML, CSS, JS)
 async function serveStaticFile(path: string) {
   const filePath = join(distFolder, path);
+  console.log(`Serving static file: ${filePath}`);
 
   try {
     const file = await Deno.readFile(filePath);
@@ -69,6 +70,7 @@ serve(async (req) => {
   
   // Serve static files from the dist folder (like index.html)
   if (url.pathname.startsWith("/dist/") || url.pathname === "/") {
+    
     return serveStaticFile(url.pathname === "/" ? "/index.html" : url.pathname);
   }
 
