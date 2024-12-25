@@ -1,7 +1,13 @@
 import { serve } from "https://deno.land/std@0.178.0/http/server.ts";
+import { join } from "https://deno.land/std@0.178.0/path/mod.ts";
+import { extname } from "https://deno.land/std@0.178.0/path/mod.ts";
+import { existsSync } from "https://deno.land/std@0.178.0/fs/mod.ts";
 
 // Open the KV database
 const kv = await Deno.openKv();
+
+// Path to your frontend's dist folder
+const distFolder = "./dist";
 
 // Function to calculate the day of the year (0-365)
 function getDayOfYear() {
@@ -34,37 +40,74 @@ async function getTodaysQuote() {
   return todaysQuote;
 }
 
-serve(async (req) => {
-  try {
-    const todaysQuote = await getTodaysQuote();
-    const response = {
-      quote: todaysQuote.value.quote,
-      author: todaysQuote.value.author,
-    };
+// Function to serve static files (HTML, CSS, JS)
+async function serveStaticFile(path: string) {
+  const filePath = join(distFolder, path);
 
-    console.log("Sending response:", response); // Log the response for debugging
-    return new Response(JSON.stringify(response), {
+  try {
+    const file = await Deno.readFile(filePath);
+    const ext = extname(filePath).toLowerCase();
+    const contentType = ext === '.html'
+      ? "text/html"
+      : ext === '.css'
+        ? "text/css"
+        : ext === '.js'
+          ? "application/javascript"
+          : "application/octet-stream";
+
+    return new Response(file, {
       status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store",
-        "Access-Control-Allow-Origin": "*", // Allow all origins
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS", // Allow specific HTTP methods
-        "Access-Control-Allow-Headers": "Content-Type", // Allow specific headers
-      },
+      headers: { "Content-Type": contentType }
     });
-  } catch (error) {
-    console.error("Error:", error); // Log any errors that occur
-    return new Response(
-      JSON.stringify({ error: error.message }), 
-      {
-        status: 500,
+  } catch (err) {
+    return new Response("File not found", { status: 404 });
+  }
+}
+
+serve(async (req) => {
+  const url = new URL(req.url);
+  
+  // Serve static files from the dist folder (like index.html)
+  if (url.pathname.startsWith("/dist/") || url.pathname === "/") {
+    return serveStaticFile(url.pathname === "/" ? "/index.html" : url.pathname);
+  }
+
+  // Handle API request for the quote
+  if (url.pathname === "/api/quote") {
+    try {
+      const todaysQuote = await getTodaysQuote();
+      const response = {
+        quote: todaysQuote.value.quote,
+        author: todaysQuote.value.author,
+      };
+
+      console.log("Sending response:", response); // Log the response for debugging
+      return new Response(JSON.stringify(response), {
+        status: 200,
         headers: {
           "Content-Type": "application/json",
+          "Cache-Control": "no-store",
+          "Access-Control-Allow-Origin": "*", // Allow all origins
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS", // Allow specific HTTP methods
+          "Access-Control-Allow-Headers": "Content-Type", // Allow specific headers
         },
-      }
-    );
+      });
+    } catch (error) {
+      console.error("Error:", error); // Log any errors that occur
+      return new Response(
+        JSON.stringify({ error: error.message }), 
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
   }
+
+  // Return 404 if the route doesn't match
+  return new Response("Not Found", { status: 404 });
 });
 
 
