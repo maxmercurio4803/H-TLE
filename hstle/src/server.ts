@@ -1,9 +1,7 @@
 import { serve } from "https://deno.land/std@0.178.0/http/server.ts";
 
 // Open the KV database
-const kv = await Deno.openKv(
-  "https://api.deno.com/databases/84b4bf31-98e8-45b8-9c18-7bdecf25987f/connect",
-);
+const kv = await Deno.openKv();
 
 // Function to calculate the day of the year (0-365)
 function getDayOfYear() {
