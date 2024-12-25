@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "hstle-bands"
-          entrypoint: "server.ts"
+          entrypoint: "https://deno.land/std@0.178.0/http/server.ts"
           root: "hstle/dist"
           
           
