@@ -37,7 +37,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "hstle-bands"
+          project: "hstle-bands-backend"
           entrypoint: "src/server.ts"
           root: "hstle"
           
