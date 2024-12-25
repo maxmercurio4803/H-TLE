@@ -36,9 +36,6 @@ async function getTodaysQuote() {
   return todaysQuote;
 }
 
-// Start the server
-console.log("Server is running on http://localhost:8000");
-
 serve(async (req) => {
   try {
     const todaysQuote = await getTodaysQuote();
