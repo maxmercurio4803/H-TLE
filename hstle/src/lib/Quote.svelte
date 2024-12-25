@@ -7,7 +7,7 @@
 
     onMount(async () => {
         try {
-            const response = await fetch("http://localhost:8000/");
+            const response = await fetch("https://hstle-bands.deno.dev/get_quote");
 
             if (!response.ok) {
                 throw new Error("Failed to fetch quote");
