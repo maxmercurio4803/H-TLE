@@ -31,12 +31,12 @@
         font-family: Arial, sans-serif;
     }
     .quote {
-        font-size: 1.5em;
-        font-style: italic;
+        font-size: 1.20em;
         margin-bottom: 10px;
+        color: white;
     }
     .author {
-        font-size: 1.2em;
+        font-size: 1.0em;
         font-weight: bold;
     }
     .error {
