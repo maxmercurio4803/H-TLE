@@ -4,8 +4,8 @@
 
 <main>
   <img src="/hstle_logo.PNG" alt="hstle logo" />
-  <h2>Knowing is not enough; we must apply. Wishing is not enough; we must do.</h2>
-  <h3> - Johann Wolfgang Von Goethe</h3>
+  <h2>The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.</h2>
+  <h3> - Winston Churchill</h3>
 
   <!-- <div class="card">
     <Counter />
