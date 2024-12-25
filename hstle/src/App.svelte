@@ -1,16 +1,14 @@
 <script lang="ts">
-  import Counter from './lib/Counter.svelte'
+  import Quote from './lib/Quote.svelte'
 </script>
 
 <main>
+  
   <img src="/hstle_logo.PNG" alt="hstle logo" />
-  <h2>The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.</h2>
-  <h3> - Winston Churchill</h3>
+  <div class="card">
+    <Quote/>
+  </div>
 
-  <!-- <div class="card">
-    <Counter />
-  </div> -->
-  <h1></h1>
   <p>
     Check out the <a href="https://hstle.store" target="_blank" rel="noreferrer">HSTLE store</a>.
   </p>
