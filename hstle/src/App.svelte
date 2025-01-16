@@ -10,7 +10,7 @@
   </div>
   
   <p>
-    Check out the <a href="https://hstle.store/?utm_source=affiliate_partner&utm_medium=link&utm_campaign=royalty_tracking" target="_blank" rel="noreferrer">HSTLE store</a>.
+    Check out the <a href="https://bit.ly/3Wj8Zzi" target="_blank" rel="noreferrer">HSTLE store</a>.
   </p>
 </main>
 
